@@ -21,12 +21,16 @@
     @include('backend.layouts.navbar')
 
     <div class="container flex justify-between mx-auto gap-2 py-2 items-center">
-        <div class="w-1/4 min-h-screen left-start">
-            @include('backend.layouts.sidebar')
+        <div class="w-1/4 min-h-screen left-start pt-1">
+           <div class="w-full">
+               @include('backend.layouts.sidebar')
+           </div>
         </div>
 
-        <div class="w-3/4 bg-gray-100 pt-4 p-10">
-            @yield('content')
+        <div class="w-3/4 min-h-screen p-6 pt-1">
+            <div class="bg-gray-100 p-10 rounded-md">
+                @yield('content')
+            </div>
         </div>
 
     </div>
