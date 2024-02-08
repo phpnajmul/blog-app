@@ -18,27 +18,25 @@
   ```
 -->
 
-    @include('backend.layouts.navbar')
+@include('backend.layouts.body.header')
 
-    <div class="container flex justify-between mx-auto gap-2 py-2 items-center">
-        <div class="w-1/4 min-h-screen left-start pt-1">
-           <div class="w-full">
-               @include('backend.layouts.sidebar')
-           </div>
+<div class="container flex justify-between mx-auto gap-2 py-2 items-center">
+    <div class="w-1/4 min-h-screen left-start pt-1">
+        <div class="w-full">
+            @include('backend.layouts.body.sidebar')
         </div>
-
-        <div class="w-3/4 min-h-screen p-6 pt-1">
-            <div class="bg-gray-100 p-10 rounded-md">
-                @yield('content')
-            </div>
-        </div>
-
     </div>
 
+    <div class="w-3/4 min-h-screen p-6 pt-1">
+        <div class="bg-gray-100 p-10 rounded-md">
+            @yield('content')
+        </div>
+    </div>
+
+</div>
 
 
-    @include('backend.layouts.footer')
-
+@include('backend.layouts.body.footer')
 
 
 <script>
