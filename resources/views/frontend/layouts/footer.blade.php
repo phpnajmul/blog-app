@@ -4,11 +4,11 @@
         <div>
             <div class="flex items-center gap-2 pb-6">
                 <img src="./assets/logo.png" alt="" class="w-[20px] h-[20px]"/>
-                <h1 class="font-bold">Easy IT</h1>
+                <h1 class="font-bold">Easy Fashion Ltd.</h1>
             </div>
             <div class="flex flex-col gap-2">
                 <p>Terms of use   |   Privacy</p>
-                <p>Copyright by 2019 Redq, Inc</p>
+                <p>Copyright by 2008 - {{ date('Y') }} <a href="https://easyfashion.com.bd/" target="_blank" class="text-blue-500 font-bold">Easy IT</a></p>
             </div>
         </div>
 
