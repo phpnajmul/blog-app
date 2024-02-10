@@ -30,8 +30,8 @@
 @include('backend.layouts.body.header')
 
 <div class="container flex justify-between mx-auto gap-2 py-2 items-center">
-    <div class="w-1/4 min-h-screen left-start pt-1">
-        <div class="w-full">
+    <div class="w-1/4 min-h-screen pt-1">
+        <div>
             @include('backend.layouts.body.sidebar')
         </div>
     </div>

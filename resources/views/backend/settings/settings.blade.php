@@ -84,7 +84,7 @@
             </div>
         </form>
         @else
-            <span class="rounded-md px-3 py-2 text-sm text-green-500 font-bold">Already Setuped, You can change any to search the edit menu.</span>
+            <span class="rounded-md px-3 py-2 text-sm text-green-500">Already Setuped, You can change any to search the <span class="font-bold">'Update Settings'</span> menu.</span>
     @endif
 
 @endsection

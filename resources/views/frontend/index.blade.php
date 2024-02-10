@@ -5,9 +5,9 @@
 <!--Hero Section Start-->
 <section class="container mx-auto px-16 py-20 flex flex-col md:flex-row gap-6 justify-between items-center">
     <div>
-        <h1 class="text-md sm:text-md md:text-5xl font-bold pb-6"><span class="text-primary">Tailwind CSS</span> Course Instructor</h1>
-        <h2 class="text-xl sm:text-xl md:text-7xl font-bold text-secondary pb-6">Najmul Hossain</h2>
-        <p class="font-bold">Founder, Village Code</p>
+        <h1 class="text-md sm:text-md md:text-5xl font-bold pb-6"><span class="text-primary">{{ $settings_value->heading }}</span> Course Instructor</h1>
+        <h2 class="text-xl sm:text-xl md:text-7xl font-bold text-secondary pb-6">{{ $settings_value->title }}</h2>
+        <p class="font-bold">{{ $settings_value->cholak }}</p>
         <div class="flex gap-6 items-center pt-8">
             <button class="btn-secondary">Get Token</button>
             <div class="flex gap-2 items-center">
@@ -17,7 +17,7 @@
         </div>
     </div>
     <div>
-        <img src="./assets/najmul.jpg" alt="Najmul Hossain" class="rounded-full border-4 border-primary"/>
+        <img src="{{  (!empty($settings_value->image))? url('upload/backend/settings/'.$settings_value->image):url('upload/no_image.jpg') }}" alt="Najmul Hossain" class="w-80 h-80 rounded-full border-4 border-primary"/>
     </div>
 </section>
 <!--Hero Section END-->
