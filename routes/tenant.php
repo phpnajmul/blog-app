@@ -49,6 +49,7 @@ Route::middleware([
 //Settings Routes Start
     Route::prefix('settings')->group(function (){
        Route::get('all', [SettingsController::class, 'allSettings'])->name('all.setting');
+       Route::post('all/store', [SettingsController::class, 'storeAllSettings'])->name('all.setting.store');
     });
 
 //Settings Routes END
