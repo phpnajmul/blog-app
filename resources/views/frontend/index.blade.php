@@ -5,7 +5,7 @@
 <!--Hero Section Start-->
 <section class="container mx-auto px-16 py-20 flex flex-col md:flex-row gap-6 justify-between items-center">
     <div>
-        <h1 class="text-md sm:text-md md:text-5xl font-bold pb-6"><span class="text-primary">{{ $settings_value->heading }}</span> Course Instructor</h1>
+        <h1 class="text-md sm:text-md md:text-5xl font-bold pb-6"><span class="text-primary">{{ $settings_value->heading }}</span></h1>
         <h2 class="text-xl sm:text-xl md:text-7xl font-bold text-secondary pb-6">{{ $settings_value->title }}</h2>
         <p class="font-bold">{{ $settings_value->cholak }}</p>
         <div class="flex gap-6 items-center pt-8">
