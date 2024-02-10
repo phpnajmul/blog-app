@@ -1,6 +1,6 @@
 <!--Navigation Start-->
 <nav class="container mx-auto flex gap-4 items-center py-2 flex-col md:flex-row">
-    <img src="./assets/logo.png" alt="Village code" class="w-[80px] h-[80px]" />
+    <img src="{{  (!empty($settings_value->logo))? url('upload/backend/settings/'.$settings_value->logo):url('upload/no_image.jpg') }}" alt="Logo" class="w-[60px] h-[60px] rounded-full border-2 border-primary" />
     <div class="w-full flex justify-between gap-6 items-center flex-col md:flex-row">
         <div class="flex items-center gap-4 flex-col md:flex-row">
             <a href="{{ route('/') }}">Home</a>

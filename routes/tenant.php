@@ -48,7 +48,10 @@ Route::middleware([
 
 //Settings Routes Start
     Route::prefix('settings')->group(function (){
-       Route::get('hero/section', [SettingsController::class, 'addHeroSection'])->name('add.hero.section');
+       Route::get('all', [SettingsController::class, 'allSettings'])->name('all.setting');
+       Route::post('all/store', [SettingsController::class, 'storeAllSettings'])->name('all.setting.store');
+       Route::get('all/edit', [SettingsController::class, 'editAllSettings'])->name('all.setting.edit');
+       Route::post('all/update/{id}', [SettingsController::class, 'updateAllSettings'])->name('all.setting.update');
     });
 
 //Settings Routes END
