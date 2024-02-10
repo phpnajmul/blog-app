@@ -48,7 +48,7 @@ Route::middleware([
 
 //Settings Routes Start
     Route::prefix('settings')->group(function (){
-       Route::get('hero/section', [SettingsController::class, 'addHeroSection'])->name('add.hero.section');
+       Route::get('all', [SettingsController::class, 'allSettings'])->name('all.setting');
     });
 
 //Settings Routes END

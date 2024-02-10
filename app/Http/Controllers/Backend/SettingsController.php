@@ -14,10 +14,8 @@ class SettingsController extends Controller
     }
 
 
-
-
-    public function addHeroSection(){
-        return view('backend.settings.add_hero_section');
+    public function allSettings(){
+        return view('backend.settings.settings');
     }
 
 
