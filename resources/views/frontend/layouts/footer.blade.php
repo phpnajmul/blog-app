@@ -3,8 +3,8 @@
     <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
         <div>
             <div class="flex items-center gap-2 pb-6">
-                <img src="./assets/logo.png" alt="" class="w-[20px] h-[20px]"/>
-                <h1 class="font-bold">Easy Fashion Ltd.</h1>
+                <img src="{{  (!empty($settings_value->footer_logo))? url('upload/backend/settings/'.$settings_value->footer_logo):url('upload/no_image.jpg') }}" alt="" class="w-[20px] h-[20px]"/>
+                <h1 class="font-bold">{{ $settings_value->footer_logo_title }}</h1>
             </div>
             <div class="flex flex-col gap-2">
                 <p>Terms of use   |   Privacy</p>
