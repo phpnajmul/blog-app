@@ -9,12 +9,13 @@ class FrontendController extends Controller
 {
     public function index(){
 
-        $settings_value = Settings::first();
+        $data['countSetting'] = Settings::count();
 
+        $data['settings_value'] = Settings::first();
         //dd($allData->heading);
-
-        return view('frontend.index',compact('settings_value'));
+        return view('frontend.index',$data);
     }
+
 
 
 

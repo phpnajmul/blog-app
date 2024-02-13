@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Tenant\ProfileController;
@@ -53,10 +54,20 @@ Route::middleware([
        Route::get('all/edit', [SettingsController::class, 'editAllSettings'])->name('all.setting.edit');
        Route::post('all/update/{id}', [SettingsController::class, 'updateAllSettings'])->name('all.setting.update');
     });
-
 //Settings Routes END
 
+//Section Menu Routes Start
+    Route::prefix('sections')->group(function (){
+        Route::get('about/index', [AboutController::class, 'index'])->name('index');
+        Route::get('about/create', [AboutController::class, 'create'])->name('create.about');
+        Route::post('about/store', [AboutController::class, 'store'])->name('store.about');
+        //about active inactive routes start
+        Route::get('about/inactive', [AboutController::class, 'inactive'])->name('inactive.about');
+        Route::get('about/active', [AboutController::class, 'active'])->name('active.about');
+        //about active inactive routes end
 
+    });
+//Section Menu Routes END
 
 
 
