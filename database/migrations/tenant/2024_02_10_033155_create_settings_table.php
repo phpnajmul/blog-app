@@ -20,6 +20,10 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('footer_logo')->nullable();
             $table->string('footer_logo_title')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('github')->nullable();
+            $table->string('dribble')->nullable();
             $table->tinyInteger('status')->comment('1=active, 0=inactive')->default(1);
             $table->tinyInteger('added_by')->nullable();
             $table->tinyInteger('updated_by')->nullable();

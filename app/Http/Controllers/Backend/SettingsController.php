@@ -39,6 +39,10 @@ class SettingsController extends Controller
         $data->title = $request->title;
         $data->cholak = $request->cholak;
         $data->footer_logo_title = $request->footer_logo_title;
+        $data->facebook = $request->facebook;
+        $data->twitter = $request->twitter;
+        $data->github = $request->github;
+        $data->dribble = $request->dribble;
 
         //logo upload here
         if ($request->file('logo')) {
@@ -78,6 +82,7 @@ class SettingsController extends Controller
 
     public function editAllSettings(){
         $data['editData'] = Settings::first();
+        $data['settings_count'] = Settings::count();
         return view('backend.settings.edit_settings',$data);
     }
 
@@ -96,6 +101,10 @@ class SettingsController extends Controller
         $data->title = $request->title;
         $data->cholak = $request->cholak;
         $data->footer_logo_title = $request->footer_logo_title;
+        $data->facebook = $request->facebook;
+        $data->twitter = $request->twitter;
+        $data->github = $request->github;
+        $data->dribble = $request->dribble;
 
         //logo upload here
         if ($request->file('logo')) {
@@ -135,6 +144,10 @@ class SettingsController extends Controller
         return redirect()->back()->with($notification);
 
     }
+
+
+
+
 
 
 

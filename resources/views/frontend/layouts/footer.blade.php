@@ -4,7 +4,7 @@
         <div>
             <div class="flex items-center gap-2 pb-6">
                 <img src="{{  (!empty($settings_value->footer_logo))? url('upload/backend/settings/'.$settings_value->footer_logo):url('upload/no_image.jpg') }}" alt="" class="w-[20px] h-[20px]"/>
-                <h1 class="font-bold">{{ $settings_value->footer_logo_title }}</h1>
+                <h1 class="font-bold">{{ ($countSetting != 0) ? $settings_value->footer_logo_title : 'Software not Setup' }}</h1>
             </div>
             <div class="flex flex-col gap-2">
                 <p>Terms of use   |   Privacy</p>
@@ -54,20 +54,20 @@
             </div>
             <div class="flex items-center gap-2">
                 <img src="./assets/facebook.png" alt="">
-                <p>Facebook</p>
+{{--                @dd($countSetting)--}}
+                <a href="{{ ($countSetting > 0) ? $settings_value->facebook : '#' }}" {{ ($countSetting > 0) ? 'target="_blank"' : '#' }}>Facebook</a>
             </div>
-
             <div class="flex items-center gap-2">
                 <img src="./assets/twitter.png" alt="">
-                <p>Twitter</p>
+                <a href="{{ ($countSetting > 0) ? $settings_value->twitter : '#' }}" {{ ($countSetting > 0) ? 'target="_blank"' : '#' }}>Twitter</a>
             </div>
             <div class="flex items-center gap-2">
                 <img src="./assets/github.png" alt="">
-                <p>GitHub</p>
+                <a href="{{ ($countSetting > 0) ? $settings_value->github : '#' }}" {{ ($countSetting > 0) ? 'target="_blank"' : '#' }}>GitHub</a>
             </div>
             <div class="flex items-center gap-2">
                 <img src="./assets/dribble.png" alt="">
-                <p>Dribble</p>
+                <a href="{{ ($countSetting > 0) ? $settings_value->dribble : '#' }}" {{ ($countSetting > 0) ? 'target="_blank"' : '#' }}>Dribble</a>
             </div>
         </div>
 

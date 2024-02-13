@@ -5,9 +5,10 @@
 <!--Hero Section Start-->
 <section class="container mx-auto px-16 py-20 flex flex-col md:flex-row gap-6 justify-between items-center">
     <div>
-        <h1 class="text-md sm:text-md md:text-5xl font-bold pb-6"><span class="text-primary">{{ $settings_value->heading }}</span></h1>
-        <h2 class="text-xl sm:text-xl md:text-7xl font-bold text-secondary pb-6">{{ $settings_value->title }}</h2>
-        <p class="font-bold">{{ $settings_value->cholak }}</p>
+{{--        //@dd($countSetting)--}}
+        <h1 class="text-md sm:text-md md:text-5xl font-bold pb-6"><span class="text-primary">{{ ($countSetting != 0) ? $settings_value->heading : 'Software not Setup' }}</span></h1>
+        <h2 class="text-xl sm:text-xl md:text-7xl font-bold text-secondary pb-6">{{ ($countSetting != 0) ? $settings_value->title : 'Software not Setup' }}</h2>
+        <p class="font-bold">{{ ($countSetting != 0) ? $settings_value->cholak : 'Software not Setup' }}</p>
         <div class="flex gap-6 items-center pt-8">
             <button class="btn-secondary">Get Token</button>
             <div class="flex gap-2 items-center">
@@ -115,7 +116,8 @@
     <div class="max-w-5xl mx-auto text-center py-20">
         <h1 class="pb-6 text-3xl">Those states we provide donation</h1>
         <P class="pb-10">We are organizing a program on January 20, 2019 to help the homeless people. Our aim is to provide them a specific place to live.</P>
-        <img src="./assets/states.png" alt="" />
+{{--        <img src="./assets/states.png" alt="" />--}}
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14607.533037587611!2d90.4219536!3d23.751542049999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1707801533471!5m2!1sen!2sbd" class="w-full h-[450px]"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div></div>
 </section>
