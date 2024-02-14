@@ -92,6 +92,9 @@
                         <div class="mt-2">
                             <input type="text" name="facebook" id="facebook" value="{{ $editData->facebook }}" class="mb-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="https://www.facebook.com/">
                         </div>
+                        @error('facebook')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-2">
@@ -99,6 +102,9 @@
                         <div class="mt-2">
                             <input type="text" name="twitter" id="twitter" value="{{ $editData->twitter }}" class="mb-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="https://twitter.com/">
                         </div>
+                        @error('twitter')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-2">
@@ -106,12 +112,18 @@
                         <div class="mt-2">
                             <input type="text" name="github" id="github" value="{{ $editData->github }}" class="mb-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="https://github.com/">
                         </div>
+                        @error('github')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="sm:col-span-2">
                         <label for="dribble" class="block text-sm font-medium leading-6 text-gray-900">Dribble</label>
                         <div class="mt-2">
                             <input type="text" name="dribble" id="dribble" value="{{ $editData->dribble }}" class="mb-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="https://dribbble.com/">
                         </div>
+                        @error('dribble')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
 

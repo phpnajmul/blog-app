@@ -61,13 +61,17 @@ Route::middleware([
         Route::get('about/index', [AboutController::class, 'index'])->name('index');
         Route::get('about/create', [AboutController::class, 'create'])->name('create.about');
         Route::post('about/store', [AboutController::class, 'store'])->name('store.about');
+        Route::get('about/edit', [AboutController::class, 'edit'])->name('edit.about');
+        Route::post('about/update/{id}', [AboutController::class, 'update'])->name('update.about');
         //about active inactive routes start
         Route::get('about/inactive', [AboutController::class, 'inactive'])->name('inactive.about');
         Route::get('about/active', [AboutController::class, 'active'])->name('active.about');
+        Route::get('about/map/details', [AboutController::class, 'mapDetails'])->name('map.details.about');
         //about active inactive routes end
-
     });
 //Section Menu Routes END
+
+
 
 
 
