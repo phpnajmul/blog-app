@@ -25,9 +25,9 @@ class SettingsController extends Controller
     public function storeAllSettings(Request $request){
 
         $validated = $request->validate([
-            'logo'              => 'required',
-            'footer_logo'       => 'required',
-            'image'             => 'required',
+            'logo'              => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            'footer_logo'       => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            'image'             => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'heading'           => 'max:35',
             'title'             => 'max:20',
             'cholak'            => 'max:50',
@@ -39,19 +39,19 @@ class SettingsController extends Controller
         ]);
 
 
-        $data = new Settings();
-        $data->heading = $request->heading;
-        $data->title = $request->title;
-        $data->cholak = $request->cholak;
+        $data                    = new Settings();
+        $data->heading           = $request->heading;
+        $data->title             = $request->title;
+        $data->cholak            = $request->cholak;
         $data->footer_logo_title = $request->footer_logo_title;
-        $data->facebook = $request->facebook;
-        $data->twitter = $request->twitter;
-        $data->github = $request->github;
-        $data->dribble = $request->dribble;
+        $data->facebook          = $request->facebook;
+        $data->twitter           = $request->twitter;
+        $data->github            = $request->github;
+        $data->dribble           = $request->dribble;
 
         //logo upload here
         if ($request->file('logo')) {
-            $file = $request->file('logo');
+            $file     = $request->file('logo');
             $filename = date('YmdHi').$file->getClientOriginalName();
             $file->move(public_path('upload/backend/settings'),$filename);
             $data['logo'] = $filename;
@@ -59,7 +59,7 @@ class SettingsController extends Controller
 
         //footer logo upload here
         if ($request->file('footer_logo')) {
-            $file = $request->file('footer_logo');
+            $file     = $request->file('footer_logo');
             $filename = date('YmdHi').$file->getClientOriginalName();
             $file->move(public_path('upload/backend/settings'),$filename);
             $data['footer_logo'] = $filename;
@@ -67,7 +67,7 @@ class SettingsController extends Controller
 
         //display image upload here
         if ($request->file('image')) {
-            $file = $request->file('image');
+            $file     = $request->file('image');
             $filename = date('YmdHi').$file->getClientOriginalName();
             $file->move(public_path('upload/backend/settings'),$filename);
             $data['image'] = $filename;
@@ -86,7 +86,7 @@ class SettingsController extends Controller
     }
 
     public function editAllSettings(){
-        $data['editData'] = Settings::first();
+        $data['editData']       = Settings::first();
         $data['settings_count'] = Settings::count();
         return view('backend.settings.edit_settings',$data);
     }
@@ -97,6 +97,9 @@ class SettingsController extends Controller
 
 
         $validated = $request->validate([
+            'logo'              => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            'footer_logo'       => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            'image'             => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'heading'           => 'max:35',
             'title'             => 'max:20',
             'cholak'            => 'max:50',
@@ -109,14 +112,14 @@ class SettingsController extends Controller
 
         //dd($validated);
 
-        $data->heading = $request->heading;
-        $data->title = $request->title;
-        $data->cholak = $request->cholak;
+        $data->heading           = $request->heading;
+        $data->title             = $request->title;
+        $data->cholak            = $request->cholak;
         $data->footer_logo_title = $request->footer_logo_title;
-        $data->facebook = $request->facebook;
-        $data->twitter = $request->twitter;
-        $data->github = $request->github;
-        $data->dribble = $request->dribble;
+        $data->facebook          = $request->facebook;
+        $data->twitter           = $request->twitter;
+        $data->github            = $request->github;
+        $data->dribble           = $request->dribble;
 
         //logo upload here
         if ($request->file('logo')) {

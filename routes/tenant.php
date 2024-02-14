@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Tenant\ProfileController;
@@ -58,7 +59,7 @@ Route::middleware([
 
 //Section Menu Routes Start
     Route::prefix('sections')->group(function (){
-        Route::get('about/index', [AboutController::class, 'index'])->name('index');
+        Route::get('about/index', [AboutController::class, 'index'])->name('index.about');
         Route::get('about/create', [AboutController::class, 'create'])->name('create.about');
         Route::post('about/store', [AboutController::class, 'store'])->name('store.about');
         Route::get('about/edit', [AboutController::class, 'edit'])->name('edit.about');
@@ -70,6 +71,19 @@ Route::middleware([
         //about active inactive routes end
     });
 //Section Menu Routes END
+
+
+//Service Section Routes Start
+    Route::prefix('services')->group(function (){
+       Route::get('index', [ServiceController::class, 'index'])->name('index.service');
+       Route::get('create', [ServiceController::class, 'create'])->name('create.service');
+       Route::post('store', [ServiceController::class, 'store'])->name('store.service');
+       Route::get('edit/{id}', [ServiceController::class, 'edit'])->name('edit.service');
+       Route::post('update/{id}', [ServiceController::class, 'update'])->name('update.service');
+       Route::get('delete/{id}', [ServiceController::class, 'delete'])->name('delete.service');
+    });
+
+//Service Section Routes END
 
 
 

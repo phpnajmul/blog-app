@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class AboutController extends Controller
 {
     public function index(){
-        $data['allData'] = About::all();
+        $data['allData']     = About::all();
         $data['count_about'] = About::count();
 
         if ($data['count_about'] > 0){
@@ -38,10 +38,10 @@ class AboutController extends Controller
 
         $data = new About();
 
-        $data->map_title = $request->map_title;
-        $data->address = $request->address;
-        $data->map_url = $request->map_url;
-        $data->added_by = Auth::id();
+        $data->map_title    = $request->map_title;
+        $data->address      = $request->address;
+        $data->map_url      = $request->map_url;
+        $data->added_by     = Auth::id();
         $data->save();
 
         $notification = array([
@@ -56,9 +56,9 @@ class AboutController extends Controller
     public function inactive(Request $request){
 
         $value = $request->inactive_value;
-        $id = $request->id;
+        $id    = $request->id;
 
-        $data = About::find($id);
+        $data         = About::find($id);
         $data->status = $value;
         $data->save();
 
@@ -68,9 +68,9 @@ class AboutController extends Controller
     public function active(Request $request){
 
         $value = $request->active_value;
-        $id = $request->id;
+        $id    = $request->id;
 
-        $data = About::find($id);
+        $data         = About::find($id);
         $data->status = $value;
         $data->save();
 
@@ -94,14 +94,14 @@ class AboutController extends Controller
             'map_url'   => 'nullable|url'
         ]);
 
-        $data->map_title = $request->map_title;
-        $data->address = $request->address;
-        $data->map_url = $request->map_url;
+        $data->map_title  = $request->map_title;
+        $data->address    = $request->address;
+        $data->map_url    = $request->map_url;
         $data->updated_by = Auth::id();
         $data->save();
 
         $notification = array([
-            'message' => 'Thanks! About updated successfully!',
+            'message'    => 'Thanks! About updated successfully!',
             'alert-type' => 'success'
         ]);
 
