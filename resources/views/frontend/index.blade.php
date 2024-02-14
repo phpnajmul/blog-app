@@ -32,59 +32,16 @@
     </div>
     <div class="container mx-auto grid grid-cols-1 gap-y-8 sm:grid-cols-2 md:grid-cols-3 bg-white p-20">
 
-        <div class="text-center flex flex-col gap-4">
-            <img src="./assets/career1.png" alt="" class="mx-auto"/>
-            <h1 class="font-bold text-xl">Coding</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <button class="text-primary font-bold">
-                Learn more <span>></span>
-            </button>
-        </div>
-
-        <div class="text-center flex flex-col gap-4">
-            <img src="./assets/career2.png" alt="" class="mx-auto"/>
-            <h1 class="font-bold text-xl">Communication</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <button class="text-primary font-bold">
-                Learn more <span>></span>
-            </button>
-        </div>
-
-        <div class="text-center flex flex-col gap-4">
-            <img src="./assets/career3.png" alt="" class="mx-auto"/>
-            <h1 class="font-bold text-xl">Growth</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <button class="text-primary font-bold">
-                Learn more <span>></span>
-            </button>
-        </div>
-
-        <div class="text-center flex flex-col gap-4">
-            <img src="./assets/career4.png" alt="" class="mx-auto"/>
-            <h1 class="font-bold text-xl">Brain storming</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <button class="text-primary font-bold">
-                Learn more <span>></span>
-            </button>
-        </div>
-
-        <div class="text-center flex flex-col gap-4">
-            <img src="./assets/career5.png" alt="" class="mx-auto"/>
-            <h1 class="font-bold text-xl">collaboration</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <button class="text-primary font-bold">
-                Learn more <span>></span>
-            </button>
-        </div>
-
-        <div class="text-center flex flex-col gap-4">
-            <img src="./assets/career6.png" alt="" class="mx-auto"/>
-            <h1 class="font-bold text-xl">Help for educational</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <button class="text-primary font-bold">
-                Learn more <span>></span>
-            </button>
-        </div>
+        @foreach($allData as $value)
+            <div class="text-center flex flex-col gap-4">
+                <img src="{{  (!empty($value->logo))? url('upload/backend/service/'.$value->logo):url('upload/no_image.jpg') }}" alt="" class="mx-auto"/>
+                <h1 class="font-bold text-xl">{{ $value->headline }}</h1>
+                <p>{{ $value->description }}</p>
+                <a href="#" class="text-primary font-bold">
+                    Learn more <span>></span>
+                </a>
+            </div>
+        @endforeach
     </div>
 
     <div class="max-w-5xl mx-auto my-6 grid grid-cols-2 md:grid-cols-4 gap-6">
