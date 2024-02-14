@@ -33,7 +33,7 @@ class AboutController extends Controller
         $validated = $request->validate([
             'map_title' => 'required|max:255',
             'address'   => 'required|max:255',
-            'map_url'   => 'required'
+            'map_url'   => 'nullable|url'
         ]);
 
         $data = new About();
@@ -76,6 +76,46 @@ class AboutController extends Controller
 
         return redirect()->back()->with('success', 'Yah! Your about is active');
     }
+
+    public function edit(){
+        $data['count_about'] = About::count();
+
+        if ($data['count_about'] > 0){
+            $data['get_about'] = About::first();
+        }
+        return view('backend.about.edit_about',$data);
+    }
+
+    public function update(Request $request, $id){
+        $data = About::find($id);
+        $validated = $request->validate([
+            'map_title' => 'required|max:255',
+            'address'   => 'required|max:255',
+            'map_url'   => 'nullable|url'
+        ]);
+
+        $data->map_title = $request->map_title;
+        $data->address = $request->address;
+        $data->map_url = $request->map_url;
+        $data->updated_by = Auth::id();
+        $data->save();
+
+        $notification = array([
+            'message' => 'Thanks! About updated successfully!',
+            'alert-type' => 'success'
+        ]);
+
+        return redirect()->route('index')->with($notification);
+
+    }
+
+    public function mapDetails(Request $request){
+        $data['get_map_url'] = About::where('id', $request->id)->first();
+        return view('backend.about.map_url_details',$data);
+    }
+
+
+
 
 
 

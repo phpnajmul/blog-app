@@ -11,6 +11,7 @@
             </div>
             <div>
                 <a href="{{ route('create.about') }}" class="{{ ($count_about > 0) ? 'hidden' : '' }} bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Create</a>
+                <a href="{{ route('edit.about') }}" class="{{ ($count_about == 0) ? 'hidden' : '' }} bg-transparent hover:bg-sky-500 text-sky-600 font-semibold hover:text-white py-2 px-4 border border-sky-500 hover:border-transparent rounded">Edit</a>
             </div>
         </div>
 
@@ -56,7 +57,11 @@
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-gray-500">
-                        <a href="#" class="{{ ($count_about == 0) ? 'hidden' : '' }} text-blue-700 font-semibold py-2 px-4 ">See details</a>
+                        @if($count_about > 0 && $value->map_url != null)
+                            <a href="{{ route('map.details.about',['id' => $value->id]) }}" class="text-blue-700 font-semibold py-2 px-4 ">See details</a>
+                        @else
+                            <span class="text-red-600 font-semibold">Not Found</span>
+                        @endif
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
                         {{ $value['users']['name'] }}

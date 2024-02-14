@@ -24,7 +24,7 @@ class SettingsController extends Controller
 
     public function storeAllSettings(Request $request){
 
-        $request->validate([
+        $validated = $request->validate([
             'logo'              => 'required',
             'footer_logo'       => 'required',
             'image'             => 'required',
@@ -32,7 +32,12 @@ class SettingsController extends Controller
             'title'             => 'max:20',
             'cholak'            => 'max:50',
             'footer_logo_title' => 'max:20',
+            'facebook'          => 'nullable|url',
+            'twitter'           => 'nullable|url',
+            'github'            => 'nullable|url',
+            'dribble'           => 'nullable|url',
         ]);
+
 
         $data = new Settings();
         $data->heading = $request->heading;
@@ -90,12 +95,19 @@ class SettingsController extends Controller
 
         $data = Settings::find($id);
 
-        $request->validate([
+
+        $validated = $request->validate([
             'heading'           => 'max:35',
             'title'             => 'max:20',
             'cholak'            => 'max:50',
             'footer_logo_title' => 'max:20',
+            'facebook'          => 'nullable|url',
+            'twitter'           => 'nullable|url',
+            'github'            => 'nullable|url',
+            'dribble'           => 'nullable|url',
         ]);
+
+        //dd($validated);
 
         $data->heading = $request->heading;
         $data->title = $request->title;
@@ -144,8 +156,6 @@ class SettingsController extends Controller
         return redirect()->back()->with($notification);
 
     }
-
-
 
 
 
