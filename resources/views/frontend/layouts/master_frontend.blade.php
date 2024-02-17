@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{ asset('/assets/codeabc_circle.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('./assets/easy_logo.png') }}" type="image/x-icon">
     <title>Easy Fashion Ltd.</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

@@ -53,20 +53,20 @@
                 <h1 class="font-bold">Connect</h1>
             </div>
             <div class="flex items-center gap-2">
-                <img src="./assets/facebook.png" alt="">
+                <img src="{{ url('./assets/facebook.png') }}" alt="">
 {{--                @dd($countSetting)--}}
                 <a href="{{ ($countSetting > 0 && $settings_value->facebook != null) ? $settings_value->facebook : '#' }}" {{ ($countSetting > 0 && $settings_value->facebook != null) ? 'target="_blank"' : '#' }}>Facebook</a>
             </div>
             <div class="flex items-center gap-2">
-                <img src="./assets/twitter.png" alt="">
+                <img src="{{ url('./assets/twitter.png') }}" alt="">
                 <a href="{{ ($countSetting > 0 && $settings_value->twitter != null) ? $settings_value->twitter : '#' }}" {{ ($countSetting > 0 && $settings_value->twitter != null) ? 'target="_blank"' : '#' }}>Twitter</a>
             </div>
             <div class="flex items-center gap-2">
-                <img src="./assets/github.png" alt="">
+                <img src="{{ url('./assets/github.png') }}" alt="">
                 <a href="{{ ($countSetting > 0 &&  $settings_value->github != null) ? $settings_value->github : '#' }}" {{ ($countSetting > 0 &&  $settings_value->github != null) ? 'target="_blank"' : '#' }}>GitHub</a>
             </div>
             <div class="flex items-center gap-2">
-                <img src="./assets/dribble.png" alt="">
+                <img src="{{ url('./assets/dribble.png') }}" alt="">
                 <a href="{{ ($countSetting > 0 && $settings_value->dribble != null) ? $settings_value->dribble : '#' }}" {{ ($countSetting > 0 && $settings_value->dribble != null) ? 'target="_blank"' : '#' }}>Dribble</a>
             </div>
         </div>

@@ -7,12 +7,12 @@
             <a href="#">Channel</a>
             <a href="#">Supports</a>
             <a href="#">About</a>
-            <img src="./assets/search.png" alt="Search" />
+            <img src="{{ url('./assets/search.png') }}" alt="Search" />
         </div>
 
         <div class="flex gap-4 items-center">
             <div class="flex items-center gap-2">
-                <img src="./assets/lock.png" alt="lock" />
+                <img src="{{ url('./assets/lock.png') }}" alt="lock" />
                 <span>Login</span>
             </div>
             <button class="bg-primary px-8 py-3 rounded-md text-white">Donate Now</button>

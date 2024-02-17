@@ -1,14 +1,14 @@
 @extends('backend.layouts.master_admin')
 @section('content')
-    @if($count_service != 6)
-        <form action="{{ route('store.service') }}" method="post" enctype="multipart/form-data">
+    @if($count_category != 6)
+        <form action="{{ route('store.category') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="bg-blue-50 text-xl text-gray-500 p-4 mb-4 rounded-md">
-                <h1>Section Menu<span> > </span>Services</h1>
+                <h1>Section Menu<span> > </span>Category</h1>
             </div>
             <div class="bg-white shadow-md py-6 px-10 rounded-md">
                 <div class="border-b border-gray-900/10">
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Service Information</h2>
+                    <h2 class="text-base font-semibold leading-7 text-gray-900">Category Information</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">You can change your website everything.</p>
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="sm:col-span-2">
@@ -26,11 +26,11 @@
                         </div>
 
                         <div class="sm:col-span-2">
-                            <label for="headline" class="block text-sm font-medium leading-6 text-gray-900">Headline</label>
+                            <label for="category_name" class="block text-sm font-medium leading-6 text-gray-900">Category Name</label>
                             <div class="mt-2">
-                                <input type="text" name="headline" id="headline" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Type your headline here">
+                                <input type="text" name="category_name" id="category_name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Type your headline here">
                             </div>
-                            @error('headline')
+                            @error('category_name')
                             <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>

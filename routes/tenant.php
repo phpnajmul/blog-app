@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Backend\AboutController;
-use App\Http\Controllers\Backend\ServiceController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Tenant\ProfileController;
@@ -31,6 +32,8 @@ Route::middleware([
 
 //Frontend route Start
     Route::get('/', [FrontendController::class, 'index'])->name('/');
+    Route::get('post/view/{id}',[FrontendController::class, 'catWisePostView'])->name('cat.wise.post.view');
+    Route::get('post/view/details/{id}',[FrontendController::class, 'PostViewDetails'])->name('post.view.details');
 //Frontend route END
 
 
@@ -73,17 +76,29 @@ Route::middleware([
 //Section Menu Routes END
 
 
-//Service Section Routes Start
-    Route::prefix('services')->group(function (){
-       Route::get('index', [ServiceController::class, 'index'])->name('index.service');
-       Route::get('create', [ServiceController::class, 'create'])->name('create.service');
-       Route::post('store', [ServiceController::class, 'store'])->name('store.service');
-       Route::get('edit/{id}', [ServiceController::class, 'edit'])->name('edit.service');
-       Route::post('update/{id}', [ServiceController::class, 'update'])->name('update.service');
-       Route::get('delete/{id}', [ServiceController::class, 'delete'])->name('delete.service');
+//Category Section Routes Start
+    Route::prefix('categories')->group(function (){
+       Route::get('index', [CategoryController::class, 'index'])->name('index.category');
+       Route::get('create', [CategoryController::class, 'create'])->name('create.category');
+       Route::post('store', [CategoryController::class, 'store'])->name('store.category');
+       Route::get('edit/{id}', [CategoryController::class, 'edit'])->name('edit.category');
+       Route::post('update/{id}', [CategoryController::class, 'update'])->name('update.category');
+       Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete.category');
     });
 
-//Service Section Routes END
+//Category Section Routes END
+
+//Post Routes Start
+    Route::prefix('post')->group(function (){
+       Route::get('index', [PostController::class, 'index'])->name('index.post');
+       Route::get('create', [PostController::class, 'create'])->name('create.post');
+       Route::post('store', [PostController::class, 'store'])->name('store.post');
+       Route::get('edit/{id}', [PostController::class, 'edit'])->name('edit.post');
+       Route::post('update/{id}', [PostController::class, 'update'])->name('update.post');
+       Route::get('delete/{id}', [PostController::class, 'delete'])->name('delete.post');
+    });
+
+//Post Routes END
 
 
 
