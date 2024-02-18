@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -101,8 +102,17 @@ class CategoryController extends Controller
 
     public function delete($id){
 
+        $post_filter = Post::where('category_id',$id)->first();
+
+        if ($post_filter != null){
+            return "Ops! This category used! You can not delete this!";
+        }
+
         $data = Category::find($id);
-        @unlink(public_path('upload/backend/category/'.$data->logo));
+
+       if ($data->logo != null){
+           @unlink(public_path('upload/backend/category/'.$data->logo));
+       }
         $data->delete();
 
         $notification = array([

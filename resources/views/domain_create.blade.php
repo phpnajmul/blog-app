@@ -14,7 +14,7 @@
             <x-input-label for="domain" :value="__('Domain')" />
             <div class="flex item-baseline">
                 <x-text-input id="domain" class="block mt-1 mr-2 w-full" type="text" name="domain" :value="old('domain')"/>
-                <p class="mt-3"> .{{ config('tenancy.central_domains')[1] }} </p>
+                <p class="mt-3"> .{{ config('tenancy.central_domains')[2] }} </p>
             </div>
             <x-input-error :messages="$errors->get('domain')" class="mt-2" />
         </div>
