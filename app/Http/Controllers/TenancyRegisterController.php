@@ -20,6 +20,8 @@ class TenancyRegisterController extends Controller
 //        dd($request->all());
         $tenant->createDomain(['domain' => $request->domain]);
 
+        //dd($tenant);
+
         $notification = array([
             'message' => 'Domain Create Successfully!',
             'alert-type' => 'success'
@@ -28,9 +30,6 @@ class TenancyRegisterController extends Controller
         return redirect()->route('dashboard')->with($notification);
     }
 
-    public function test(){
-        return view('test');
-    }
 
 
 }

@@ -35,8 +35,6 @@ Route::prefix('domains')->group(function (){
 });
 
 
-Route::get('test',[TenancyRegisterController::class, 'test']);
-
 
 
 require __DIR__.'/auth.php';
