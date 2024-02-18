@@ -120,7 +120,7 @@ return [
         /**
          * Should storage_path() be suffixed.
          *
-         * Note: Disabling this will likely break local disk tenancy. Only disable this if you're using an external file storage service like S3.
+         * Note: Disabling this will likely break local disk tenancy. Only disable this if you're using an external file storage news like S3.
          *
          * For the vast majority of applications, this feature should be enabled. But in some
          * edge cases, it can cause issues (like using Passport with Vapor - see #196), so

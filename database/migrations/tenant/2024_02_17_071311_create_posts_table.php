@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('logo')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->string('image')->nullable();
             $table->string('headline')->nullable();
             $table->string('description')->nullable();
+            $table->mediumText('full_content')->nullable();
             $table->tinyInteger('added_by')->nullable();
             $table->tinyInteger('updated_by')->nullable();
             $table->tinyInteger('status')->default(1)->comment('0=inactive 1=active');
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('posts');
     }
 };

@@ -23,22 +23,22 @@
 </section>
 <!--Hero Section END-->
 
-<!--Service Section Start-->
+<!--Category Section Start-->
 <section class="bg-[#EEF5FF] p-20">
     <div class="text-center">
-        <p class="text-primary font-bold">Service we work for</p>
-        <h1 class="pb-8">What care we do for your career</h1>
+        <p class="text-primary font-bold">Post Category</p>
+        <h1 class="pb-8">All Category List</h1>
         <img src="./assets/down.png" alt="" class="mx-auto"/>
     </div>
     <div class="container mx-auto grid grid-cols-1 gap-y-8 sm:grid-cols-2 md:grid-cols-3 bg-white p-20">
 
         @foreach($allData as $value)
             <div class="text-center flex flex-col gap-4">
-                <img src="{{  (!empty($value->logo))? url('upload/backend/service/'.$value->logo):url('upload/no_image.jpg') }}" alt="" class="mx-auto"/>
+                <img src="{{  (!empty($value->logo))? url('upload/backend/category/'.$value->logo):url('upload/no_image.jpg') }}" alt="" class="mx-auto"/>
                 <h1 class="font-bold text-xl">{{ $value->headline }}</h1>
                 <p>{{ $value->description }}</p>
-                <a href="#" class="text-primary font-bold">
-                    Learn more <span>></span>
+                <a href="{{ route('cat.wise.post.view',$value->id) }}" class="text-primary font-bold">
+                    see more <span>></span>
                 </a>
             </div>
         @endforeach
@@ -66,7 +66,7 @@
         </div>
     </div>
 </section>
-<!--Service Section END-->
+<!--Category Section END-->
 
 <!--States Section Start-->
 <section>

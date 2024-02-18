@@ -22,7 +22,7 @@
 @include('backend.layouts.body.header')
 
 <div class="container flex justify-between mx-auto gap-2 py-2 items-center">
-    <div class="w-1/4 min-h-screen py-1">
+    <div class="w-1/4 py-1 min-h-screen">
         <div>
             @include('backend.layouts.body.sidebar')
         </div>
