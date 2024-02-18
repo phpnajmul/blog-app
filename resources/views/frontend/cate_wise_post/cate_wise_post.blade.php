@@ -12,7 +12,7 @@
                 @foreach($cat_wise_post as $value)
                     <a href="{{ route('post.view.details',$value->id) }}">
                         <div class="text-center flex flex-col p-4 rounded-md gap-4 shadow-md border border-gray-100">
-                            <img src="{{  (!empty($value->image))? url('upload/backend/post/'.$value->image):url('upload/no_image.jpg') }}" alt="" class="mx-auto rounded-md h-[150px] w-[150px]"/>
+                            <img src="{{  (!empty($value->image))? url('upload/backend/post/'.$value->image):url('upload/no_image.jpg') }}" alt="" class="mx-auto rounded-md h-[150px] w-[200px]"/>
                             <h1 class="font-bold text-xl">{{ $value->headline }}</h1>
                             <p>{{ $value->description }}</p>
                             <p class="text-sm text-gray-400 text-center">Posted on: {{ \Carbon\Carbon::parse($value->created_at)->diffForHumans() }}</p>

@@ -47,7 +47,7 @@ class PostController extends Controller
         $data->save();
 
         $notification = array([
-            'message'    => 'News create successfully',
+            'message'    => 'Post create successfully',
             'alert-type' => 'success',
         ]);
         return redirect()->route('index.post')->with($notification);
@@ -63,7 +63,7 @@ class PostController extends Controller
         $data = Post::find($id);
         $validated = $request->validate([
             'category_id'  => 'required',
-            'image'        => 'required|image|mimes:jpeg,jpg,png,gif',
+            'image'        => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'headline'     => 'required|max:50',
             'description'  => 'required|max:50',
             'full_content' => 'required',
@@ -86,7 +86,7 @@ class PostController extends Controller
         $data->save();
 
         $notification = array([
-            'message'    => 'News updated successfully',
+            'message'    => 'Post updated successfully',
             'alert-type' => 'success',
         ]);
         return redirect()->route('index.post')->with($notification);
@@ -94,15 +94,19 @@ class PostController extends Controller
 
     public function delete($id){
         $data = Post::find($id);
-        @unlink(public_path('upload/backend/post/'.$data->image));
+        if ($data->image != null){
+            @unlink(public_path('upload/backend/post/'.$data->image));
+        }
         $data->delete();
 
         $notification = array([
-            'message'    => 'News deleted successfully',
+            'message'    => 'Post deleted successfully',
             'alert-type' => 'success',
         ]);
         return redirect()->route('index.post')->with($notification);
     }
+
+
 
 
 
