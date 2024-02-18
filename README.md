@@ -11,11 +11,11 @@
 <p>1. Copy Repository code link or Download</p>  
 
 ### Link  
-`https://github.com/phpnajmul/blog-site.git`
+`https://github.com/phpnajmul/blog-app.git`
 
 <p>2. Open your terminal & on local server file</p>  
 
-`git clone https://github.com/phpnajmul/blog-site.git`  
+`git clone https://github.com/phpnajmul/blog-app.git`  
 
 <p>Then save this file to your location file.</p>
 
