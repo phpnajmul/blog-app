@@ -105,7 +105,7 @@ class AboutController extends Controller
             'alert-type' => 'success'
         ]);
 
-        return redirect()->route('index')->with($notification);
+        return redirect()->route('index.about')->with($notification);
 
     }
 
